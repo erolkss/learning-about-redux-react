@@ -31,6 +31,15 @@ const cartSlice = createSlice({
           : product
       );
     },
+    increaseProductQuantity: (state, action) => {
+      state.products = state.products
+        .map((product) =>
+          product.id === action.payload
+            ? { ...product, quantity: product.quantity - 1 }
+            : product
+        )
+        .filter((product) => product.quantity > 0);
+    },
   },
 });
 
