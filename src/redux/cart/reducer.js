@@ -5,14 +5,7 @@ const initialState = {
 };
 
 const cartReducer = (state = initialState, action) => {
-  switch (action.type) {   
-    case CartActionTypes.REMOVE_PRODUCT:
-      return {
-        ...state,
-        products: state.products.filter(
-          (product) => product.id !== action.payload
-        ),
-      };    
+  switch (action.type) {       
     default:
       return state;
   }
